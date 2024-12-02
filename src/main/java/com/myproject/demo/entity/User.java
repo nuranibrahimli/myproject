@@ -24,16 +24,20 @@ public class User {
     @Column(nullable = false, unique = true)
     private String email;
 
+    @Column
+    private String profileImage;
+
     // Default constructor
     public User() {
     }
 
     // All args constructor
-    public User(Long id, String username, String password, String email) {
+    public User(Long id, String username, String password, String email, String profileImage) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.email = email;
+        this.profileImage = profileImage;
     }
 
     // Getters and Setters
@@ -69,6 +73,14 @@ public class User {
         this.email = email;
     }
 
+    public String getProfileImage() {
+        return profileImage;
+    }
+
+    public void setProfileImage(String profileImage) {
+        this.profileImage = profileImage;
+    }
+
     // toString method
     @Override
     public String toString() {
@@ -77,6 +89,7 @@ public class User {
                 + ", username='" + username + '\''
                 + ", password='" + password + '\''
                 + ", email='" + email + '\''
+                + ", profileImage='" + profileImage + '\''
                 + '}';
     }
 }

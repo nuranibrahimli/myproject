@@ -2,12 +2,14 @@ package com.myproject.demo.entity;
 
 import java.time.LocalDateTime;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
+@Entity
 public class Friend {
 
     @Id
@@ -24,6 +26,16 @@ public class Friend {
 
     private Integer xpPoints;
     private LocalDateTime createdAt;
+
+    public Friend() {
+    }
+
+    public Friend(User user, User friend, Integer xpPoints, LocalDateTime createdAt) {
+        this.user = user;
+        this.friend = friend;
+        this.xpPoints = xpPoints;
+        this.createdAt = createdAt;
+    }
 
     public Long getId() {
         return id;
@@ -65,15 +77,14 @@ public class Friend {
         this.createdAt = createdAt;
     }
 
-    public Friend() {
-
+    @Override
+    public String toString() {
+        return "Friend{"
+                + "id=" + id
+                + ", user=" + user
+                + ", friend=" + friend
+                + ", xpPoints=" + xpPoints
+                + ", createdAt=" + createdAt
+                + '}';
     }
-
-    public Friend(User user, User friend, Integer xpPoints, LocalDateTime createdAt) {
-        this.user = user;
-        this.friend = friend;
-        this.xpPoints = xpPoints;
-        this.createdAt = createdAt;
-    }
-
 }
