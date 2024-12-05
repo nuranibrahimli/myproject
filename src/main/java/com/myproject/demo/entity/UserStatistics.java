@@ -2,12 +2,14 @@ package com.myproject.demo.entity;
 
 import java.time.LocalDateTime;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 
+@Entity
 public class UserStatistics {
 
     @Id
@@ -23,35 +25,36 @@ public class UserStatistics {
     private Integer totalXP;
     private Double averageScore;
     private LocalDateTime lastExamDate;
-    private Integer mondayScore;
-    private Integer tuesdayScore;
-    private Integer wednesdayScore;
-    private Integer thursdayScore;
-    private Integer fridayScore;
-    private Integer saturdayScore;
-    private Integer sundayScore;
+    private Integer mondayPoints;
+    private Integer tuesdayPoints;
+    private Integer wednesdayPoints;
+    private Integer thursdayPoints;
+    private Integer fridayPoints;
+    private Integer saturdayPoints;
+    private Integer sundayPoints;
 
     public UserStatistics() {
-
     }
 
     public UserStatistics(User user, Integer totalExams, Integer completedExams, Integer totalXP, Double averageScore,
-            LocalDateTime lastExamDate, Integer mondayScore, Integer tuesdayScore, Integer wednesdayScore,
-            Integer thursdayScore, Integer fridayScore, Integer saturdayScore, Integer sundayScore) {
+            LocalDateTime lastExamDate, Integer mondayPoints, Integer tuesdayPoints, Integer wednesdayPoints,
+            Integer thursdayPoints, Integer fridayPoints, Integer saturdayPoints, Integer sundayPoints) {
         this.user = user;
         this.totalExams = totalExams;
         this.completedExams = completedExams;
         this.totalXP = totalXP;
         this.averageScore = averageScore;
         this.lastExamDate = lastExamDate;
-        this.mondayScore = mondayScore;
-        this.tuesdayScore = tuesdayScore;
-        this.wednesdayScore = wednesdayScore;
-        this.thursdayScore = thursdayScore;
-        this.fridayScore = fridayScore;
-        this.saturdayScore = saturdayScore;
-        this.sundayScore = sundayScore;
+        this.mondayPoints = mondayPoints;
+        this.tuesdayPoints = tuesdayPoints;
+        this.wednesdayPoints = wednesdayPoints;
+        this.thursdayPoints = thursdayPoints;
+        this.fridayPoints = fridayPoints;
+        this.saturdayPoints = saturdayPoints;
+        this.sundayPoints = sundayPoints;
     }
+
+    // Getters and setters
 
     public Long getId() {
         return id;
@@ -109,60 +112,79 @@ public class UserStatistics {
         this.lastExamDate = lastExamDate;
     }
 
-    public Integer getMondayScore() {
-        return mondayScore;
+    public Integer getMondayPoints() {
+        return mondayPoints;
     }
 
-    public void setMondayScore(Integer mondayScore) {
-        this.mondayScore = mondayScore;
+    public void setMondayPoints(Integer mondayPoints) {
+        this.mondayPoints = mondayPoints;
     }
 
-    public Integer getTuesdayScore() {
-        return tuesdayScore;
+    public Integer getTuesdayPoints() {
+        return tuesdayPoints;
     }
 
-    public void setTuesdayScore(Integer tuesdayScore) {
-        this.tuesdayScore = tuesdayScore;
+    public void setTuesdayPoints(Integer tuesdayPoints) {
+        this.tuesdayPoints = tuesdayPoints;
     }
 
-    public Integer getWednesdayScore() {
-        return wednesdayScore;
+    public Integer getWednesdayPoints() {
+        return wednesdayPoints;
     }
 
-    public void setWednesdayScore(Integer wednesdayScore) {
-        this.wednesdayScore = wednesdayScore;
+    public void setWednesdayPoints(Integer wednesdayPoints) {
+        this.wednesdayPoints = wednesdayPoints;
     }
 
-    public Integer getThursdayScore() {
-        return thursdayScore;
+    public Integer getThursdayPoints() {
+        return thursdayPoints;
     }
 
-    public void setThursdayScore(Integer thursdayScore) {
-        this.thursdayScore = thursdayScore;
+    public void setThursdayPoints(Integer thursdayPoints) {
+        this.thursdayPoints = thursdayPoints;
     }
 
-    public Integer getFridayScore() {
-        return fridayScore;
+    public Integer getFridayPoints() {
+        return fridayPoints;
     }
 
-    public void setFridayScore(Integer fridayScore) {
-        this.fridayScore = fridayScore;
+    public void setFridayPoints(Integer fridayPoints) {
+        this.fridayPoints = fridayPoints;
     }
 
-    public Integer getSaturdayScore() {
-        return saturdayScore;
+    public Integer getSaturdayPoints() {
+        return saturdayPoints;
     }
 
-    public void setSaturdayScore(Integer saturdayScore) {
-        this.saturdayScore = saturdayScore;
+    public void setSaturdayPoints(Integer saturdayPoints) {
+        this.saturdayPoints = saturdayPoints;
     }
 
-    public Integer getSundayScore() {
-        return sundayScore;
+    public Integer getSundayPoints() {
+        return sundayPoints;
     }
 
-    public void setSundayScore(Integer sundayScore) {
-        this.sundayScore = sundayScore;
+    public void setSundayPoints(Integer sundayPoints) {
+        this.sundayPoints = sundayPoints;
     }
 
+    @Override
+    public String toString() {
+        return "UserStatistics{" +
+                "id=" + id +
+                ", user=" + user +
+                ", totalExams=" + totalExams +
+                ", completedExams=" + completedExams +
+                ", totalXP=" + totalXP +
+                ", averageScore=" + averageScore +
+                ", lastExamDate=" + lastExamDate +
+                ", mondayPoints=" + mondayPoints +
+                ", tuesdayPoints=" + tuesdayPoints +
+                ", wednesdayPoints=" + wednesdayPoints +
+                ", thursdayPoints=" + thursdayPoints +
+                ", fridayPoints=" + fridayPoints +
+                ", saturdayPoints=" + saturdayPoints +
+                ", sundayPoints=" + sundayPoints +
+                '}';
+    }
 }
